@@ -15,6 +15,11 @@ import {
   Infinity
 } from 'lucide-react';
 
+// --- Dados para Prova Social (70% Mulheres / 70% Acesso Completo) ---
+const nomes = ['Ana Clara', 'Beatriz Silva', 'Camila Souza', 'Daniela Meireles', 'Elaine Pires', 'Fernanda Lima', 'Gabriela Costa', 'Heloísa Favero', 'Isabela Rocha', 'Juliana Matos', 'Marcos Oliveira', 'Ricardo Santos', 'João Pedro', 'Lucas Ferreira'];
+const cidades = ['Araras - SP', 'Passos - MG', 'Lages - SC', 'Caruaru - PE', 'Itapetininga - SP', 'Juazeiro - BA', 'Sobral - CE', 'Chapecó - SC', 'Anápolis - GO', 'Dourados - MS'];
+const planos = ['Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Essencial', 'Acesso Essencial', 'Acesso Essencial'];
+
 // --- Components ---
 
 const Navbar: React.FC = () => (
@@ -49,7 +54,6 @@ const Hero: React.FC = () => (
           alt="Mockup do Plano Organizer em dispositivos" 
           className="rounded-3xl shadow-2xl object-cover w-full h-[350px] md:h-[500px]"
           onError={(e) => {
-            // Fallback caso o link direto do Imgur falhe
             (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop';
           }}
         />
@@ -169,7 +173,7 @@ const Pricing: React.FC = () => {
                 <span className="text-5xl font-extrabold text-slate-900 font-title">19,90</span>
               </div>
               <a 
-                href="#"
+                href="COLE_AQUI_LINK_ESSENCIAL"
                 className="block w-full text-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-800 btn-montserrat rounded-2xl transition-all active:scale-95"
               >
                 QUERO COMEÇAR AGORA
@@ -212,7 +216,7 @@ const Pricing: React.FC = () => {
                 <span className="text-6xl font-extrabold text-slate-900 font-title">47,00</span>
               </div>
               <a 
-                href="#"
+                href="COLE_AQUI_LINK_COMPLETO"
                 className="block w-full text-center py-5 bg-teal-500 hover:bg-teal-600 text-white btn-montserrat rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-lg"
               >
                 QUERO O SISTEMA COMPLETO
@@ -242,7 +246,7 @@ const TrustAndSecurity: React.FC = () => (
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-4 mb-4">
             <div className="p-3 bg-white rounded-xl shadow-sm border border-slate-100">
-               <CreditCard size={24} className="text-slate-600" />
+                <CreditCard size={24} className="text-slate-600" />
             </div>
             <div className="font-bold text-2xl text-teal-600 italic font-title">Pix</div>
           </div>
@@ -325,8 +329,26 @@ const Footer: React.FC = () => (
 // --- Main App ---
 
 export default function App() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [data, setData] = useState({ nome: '', cidade: '', plano: '' });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomNome = nomes[Math.floor(Math.random() * nomes.length)];
+      const randomCidade = cidades[Math.floor(Math.random() * cidades.length)];
+      const randomPlano = planos[Math.floor(Math.random() * planos.length)];
+
+      setData({ nome: randomNome, cidade: randomCidade, plano: randomPlano });
+      setShowPopup(true);
+
+      setTimeout(() => setShowPopup(false), 5000);
+    }, 15000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
       <Hero />
       <PainPoints />
@@ -345,6 +367,32 @@ export default function App() {
           QUERO COMEÇAR AGORA
         </a>
       </div>
+
+      {/* Social Proof Popup */}
+      {showPopup && (
+        <div className="fixed bottom-20 left-4 md:bottom-4 z-50 animate-bounce-in">
+          <div className="bg-white border-l-4 border-teal-500 shadow-2xl rounded-lg p-4 flex items-center gap-4 max-w-[280px]">
+            <div className="bg-teal-100 p-2 rounded-full">
+              <CheckCircle className="w-5 h-5 text-teal-600" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-slate-800">Acesso liberado!</p>
+              <p className="text-[11px] text-slate-600 leading-tight">
+                <strong>{data.nome}</strong> de {data.cidade} <br />
+                comprou o <strong>{data.plano}</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes bounce-in {
+          0% { transform: translateX(-100%); opacity: 0; }
+          100% { transform: translateX(0); opacity: 1; }
+        }
+        .animate-bounce-in { animation: bounce-in 0.5s ease-out; }
+      `}</style>
     </div>
   );
 }
