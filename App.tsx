@@ -16,8 +16,8 @@ import {
 } from 'lucide-react';
 
 // --- Dados para Prova Social (70% Mulheres / 70% Acesso Completo) ---
-const nomes = ['Ana Clara', 'Beatriz Silva', 'Camila Souza', 'Daniela Meireles', 'Elaine Pires', 'Fernanda Lima', 'Gabriela Costa', 'Heloísa Favero', 'Isabela Rocha', 'Juliana Matos', 'Marcos Oliveira', 'Ricardo Santos', 'João Pedro', 'Lucas Ferreira'];
-const cidades = ['Araras - SP', 'Passos - MG', 'Lages - SC', 'Caruaru - PE', 'Itapetininga - SP', 'Juazeiro - BA', 'Sobral - CE', 'Chapecó - SC', 'Anápolis - GO', 'Dourados - MS'];
+const nomes = ['Ana Clara', 'Beatriz Silva', 'Camila Souza', 'Daniela Meireles', 'Elaine Pires', 'Fernanda Lima', 'Gabriela Costa', 'Heloísa Favero', 'Isabela Rocha', 'Juliana Matos', 'Larissa Moraes', 'Thais Cavalcanti', 'Renata Silveira', 'Priscila Ramos', 'Letícia Almeida', 'Viviane Rocha', 'Simone Borges', 'Marcos Oliveira', 'Ricardo Santos', 'João Pedro', 'Lucas Ferreira', 'André Luiz', 'Fábio Júnior', 'Gustavo Henrique'];
+const cidades = ['Araras - SP', 'Passos - MG', 'Lages - SC', 'Caruaru - PE', 'Itapetininga - SP', 'Juazeiro - BA', 'Sobral - CE', 'Chapecó - SC', 'Anápolis - GO', 'Dourados - MS', 'Pouso Alegre - MG', 'Rio do Sul - SC', 'Marília - SP', 'Petrolina - PE', 'Sinop - MT', 'Guarapuava - PR', 'Mossoró - RN'];
 const planos = ['Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Essencial', 'Acesso Essencial', 'Acesso Essencial'];
 
 // --- Components ---
@@ -173,7 +173,7 @@ const Pricing: React.FC = () => {
                 <span className="text-5xl font-extrabold text-slate-900 font-title">19,90</span>
               </div>
               <a 
-                href="COLE_AQUI_LINK_ESSENCIAL"
+                href="https://pay.kiwify.com.br/b9sPkfB"
                 className="block w-full text-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-800 btn-montserrat rounded-2xl transition-all active:scale-95"
               >
                 QUERO COMEÇAR AGORA
@@ -216,7 +216,7 @@ const Pricing: React.FC = () => {
                 <span className="text-6xl font-extrabold text-slate-900 font-title">47,00</span>
               </div>
               <a 
-                href="COLE_AQUI_LINK_COMPLETO"
+                href="https://pay.kiwify.com.br/V14ISJo"
                 className="block w-full text-center py-5 bg-teal-500 hover:bg-teal-600 text-white btn-montserrat rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-lg"
               >
                 QUERO O SISTEMA COMPLETO
@@ -341,7 +341,7 @@ export default function App() {
       setData({ nome: randomNome, cidade: randomCidade, plano: randomPlano });
       setShowPopup(true);
 
-      setTimeout(() => setShowPopup(false), 5000);
+      setTimeout(() => setShowPopup(false), 15000);
     }, 15000); 
 
     return () => clearInterval(interval);
