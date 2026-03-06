@@ -17,7 +17,6 @@ import {
 
 // --- Dados para Prova Social (70% Mulheres / 70% Acesso Completo) ---
 const nomes = ['Ana Clara', 'Beatriz Silva', 'Camila Souza', 'Daniela Meireles', 'Elaine Pires', 'Fernanda Lima', 'Gabriela Costa', 'Heloísa Favero', 'Isabela Rocha', 'Juliana Matos', 'Larissa Moraes', 'Thais Cavalcanti', 'Renata Silveira', 'Priscila Ramos', 'Letícia Almeida', 'Viviane Rocha', 'Simone Borges', 'Marcos Oliveira', 'Ricardo Santos', 'João Pedro', 'Lucas Ferreira', 'André Luiz', 'Fábio Júnior', 'Gustavo Henrique'];
-const cidades = ['Araras - SP', 'Passos - MG', 'Lages - SC', 'Caruaru - PE', 'Itapetininga - SP', 'Juazeiro - BA', 'Sobral - CE', 'Chapecó - SC', 'Anápolis - GO', 'Dourados - MS', 'Pouso Alegre - MG', 'Rio do Sul - SC', 'Marília - SP', 'Petrolina - PE', 'Sinop - MT', 'Guarapuava - PR', 'Mossoró - RN'];
 const planos = ['Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Completo', 'Acesso Essencial', 'Acesso Essencial', 'Acesso Essencial'];
 
 // --- Components ---
