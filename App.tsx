@@ -188,7 +188,7 @@ export default function App() {
       setData({ nome: randomNome, plano: randomPlano });
       setShowPopup(true);
       setTimeout(() => setShowPopup(false), 10000); // 10s na tela
-    }, 13000); // Novo balão a cada 13s
+    }, 25000); // Novo balão a cada 15s
     return () => clearInterval(interval);
   }, []);
 
