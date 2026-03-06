@@ -334,10 +334,10 @@ export default function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       const randomNome = nomes[Math.floor(Math.random() * nomes.length)];
-      const randomCidade = cidades[Math.floor(Math.random() * cidades.length)];
       const randomPlano = planos[Math.floor(Math.random() * planos.length)];
 
-      setData({ nome: randomNome, cidade: randomCidade, plano: randomPlano });
+      // Agora enviamos apenas nome e plano, sem a cidade
+      setData({ nome: randomNome, plano: randomPlano });
       setShowPopup(true);
 
       setTimeout(() => setShowPopup(false), 10000);
