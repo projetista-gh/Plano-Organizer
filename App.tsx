@@ -378,9 +378,9 @@ export default function App() {
             <div>
               <p className="text-xs font-bold text-slate-800">Acesso liberado!</p>
               <p className="text-[11px] text-slate-600 leading-tight">
-                <strong>{data.nome}</strong> de {data.cidade} <br />
-                garantiu o <strong>{data.plano}</strong>.
-              </p>
+                <strong>{data.nome}</strong> garantiu o <br />
+  <strong>{data.plano}</strong>.
+</p>
             </div>
           </div>
         </div>
