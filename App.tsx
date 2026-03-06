@@ -173,7 +173,7 @@ const Pricing: React.FC = () => {
                 <span className="text-5xl font-extrabold text-slate-900 font-title">19,90</span>
               </div>
               <a 
-                href="COLE_AQUI_LINK_ESSENCIAL"
+                href="https://pay.kiwify.com.br/b9sPkfB"
                 className="block w-full text-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-800 btn-montserrat rounded-2xl transition-all active:scale-95"
               >
                 QUERO COMEÇAR AGORA
@@ -216,7 +216,7 @@ const Pricing: React.FC = () => {
                 <span className="text-6xl font-extrabold text-slate-900 font-title">47,00</span>
               </div>
               <a 
-                href="COLE_AQUI_LINK_COMPLETO"
+                href="https://kiwify.app/qRx6KQB"
                 className="block w-full text-center py-5 bg-teal-500 hover:bg-teal-600 text-white btn-montserrat rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 text-lg"
               >
                 QUERO O SISTEMA COMPLETO
